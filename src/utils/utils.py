@@ -3,6 +3,46 @@ import seaborn as sns
 from collections import Counter
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+
+def predict(df):
+
+    # df with the zero values in rank column
+    with_zeros = df[['Score','Scored_by','Rank']].copy()
+
+    # setup x and y for training
+    # drop data with zero in the row
+    clean_df = with_zeros[with_zeros.Rank  != 0]
+
+    # separate variables into my x and y
+    x = clean_df[['Score','Scored_by']].values
+    y = clean_df['Rank'].values
+
+    # fit my model
+    lm = LinearRegression()
+    lm.fit(x, y)
+
+    # get the rows I am trying to do my prediction on
+    predict_x = with_zeros[with_zeros['Rank'] == 0][['Score','Scored_by']].values
+
+    # perform my prediction
+    lm.predict(predict_x)
+
+    # Get index of missing data
+    missing_index = with_zeros[with_zeros['Rank'] == 0].index
+
+    # Replace
+    df.loc[missing_index, 'Rank'] = lm.predict(predict_x)
+
+
+def to_minutes(df):
+    df['Duration'] = df['Duration'].apply(lambda positions : positions.split(' ')).apply(lambda positions : positions[0] if len(positions) <= 1 else # is lenght of the word 1 or is less than 1 then zero
+            (int(positions[0]) / 60 if positions[1] == 'sec' else # If position 1 is sec, then we devide position 1 by 60
+            (int(positions[0]) if positions[1] == 'min' else # if potision 1 is min, then pring position 0
+            (int(positions[0]) * 60 if positions[1] == 'hr' and len(positions) == 2 else # If position 1 is hr and lenght of the string equals 2 (3 words), then we multiply position 1 by 60
+            (int(positions[0]) * 60 + int(positions[2]) if positions[1] == 'hr' and positions[2] != 'per' and positions[2] != 'min'  else # If position 1 is hr and position 2 is not ped, then we multiply position 1 by 60 and sum to position 2
+            int(positions[0]) * 60  )))))
 
 
 def pieplot(data, graph_name):
