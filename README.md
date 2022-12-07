@@ -36,6 +36,7 @@ The parts in the proyect is as follows:
 [Click here to open the Jupyter Notebook](https://github.com/RealXun/EDA_ANIME/blob/eb2d58dcfe9fffe1b481e7d7da5557491d2300a3/src/EDA_Anime.ipynb)
 
 ## Libraries used
+```
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -45,6 +46,7 @@ import seaborn as sns
 from collections import Counter
 from scipy.stats import chi2_contingency
 from sklearn.linear_model import LinearRegression
+```
 
 ## Questions and Hypothesis
 - Which is the most common anime source?
