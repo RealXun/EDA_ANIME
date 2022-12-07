@@ -33,11 +33,11 @@ The [dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.cs
 
 The libraries used in this [script](https://github.com/RealXun/EDA_ANIME/blob/main/src/notebooks/Jikan_API_V4_V5.ipynb) are:
 
-'''
+```
 import requests, json, os, sys, time
 import pandas as pd
 from datetime import datetime
-'''
+```
 
 Here the [cleaned dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv)
 
@@ -100,21 +100,21 @@ The parts in the proyect is as follows:
 ## Libraries used
 --------------------------------------
 Script to gather the information
-'''
+```
 import requests, json, os, sys, time
 import pandas as pd
 from datetime import datetime
-'''
+```
 
 utils file with the definitions
-'''
+```
 import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import Counter
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-'''
+```
 
 EDA notebook
 ```
