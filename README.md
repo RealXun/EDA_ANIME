@@ -1,6 +1,12 @@
 # Exploratory Data Analysis (EDA) on Anime Data from MyAnimeList
+--------------------------------------
+
+<p align="center">
+    <img src="https://github.com/RealXun/EDA_ANIME/blob/main/src/images/cover.png" width="1000">
+</p>
 
 ## Introduction to Anime (Japanese Animation)
+--------------------------------------
 
 <div align="justify">"Anime" is the term used by Western audiences to describe Japanese animated films and television programs (although it is used to describe any animation in Japan).
   
@@ -21,6 +27,7 @@ Today's teenagers are getting hooked on Japanese anime again. It's happening to 
 Anime may be going through one of its best periods in history. The genre has audiences almost everywhere in the world. The stories are reaching diverse audiences and, technology permitting, a series of tools are available to improve manga adaptations or new proposals. A boom.</div>
 
 ## About the work done
+--------------------------------------
 
 Usually when we think of Data Science, Machine Learning or Artificial Intelligence, we think of the models and the wonderful applications, but the first step is usually to explore and clean the data.
 
@@ -36,6 +43,7 @@ The parts in the proyect is as follows:
 [Click here to open the Jupyter Notebook](https://github.com/RealXun/EDA_ANIME/blob/eb2d58dcfe9fffe1b481e7d7da5557491d2300a3/src/EDA_Anime.ipynb)
 
 ## Libraries used
+--------------------------------------
 ```
 import matplotlib.pyplot as plt
 import numpy as np
@@ -49,6 +57,7 @@ from sklearn.linear_model import LinearRegression
 ```
 
 ## Questions and Hypothesis
+--------------------------------------
 - Which is the most common anime source?
 - Which is the most coomon anime typ?
 - PG-13 - Teens 13 or older has more animes int he top 10.
