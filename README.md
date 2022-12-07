@@ -42,6 +42,46 @@ The parts in the proyect is as follows:
 
 [Click here to open the Jupyter Notebook](https://github.com/RealXun/EDA_ANIME/blob/eb2d58dcfe9fffe1b481e7d7da5557491d2300a3/src/EDA_Anime.ipynb)
 
+## Structure
+--------------------------------------
+- Introduction
+- Data Preparation, Cleaning and Descriptive Analysis
+    - Importing libraries and checking the raw information
+    - Cleaning the columns with empty lists
+    - About released, Scored_by, Score and Rank
+    - Dealing with Audience and Rating columns
+    - Removing unncesary columns
+    - Change null values to Unknown
+    - Standaricing duration column
+    - Checking results after the cleaning process
+- Data and visual Analysis
+    - One Dimensional-Analysis
+        - Numerical Columns
+            - N_Episodes
+            - Duration
+            - Score
+            - Rank
+        - Categorical Columns
+            - Type
+            - Source
+            - Rating
+            - Genre
+            - Theme
+            - Released
+            - Producers
+            - Studios
+    - Bi-Dimensional-Analysis
+        - Score and Type
+        - Score and Source
+        - Score and Number of Episodes
+        - Score and Duration of the episodes
+        - Score and Rating
+        - Score and Genre
+        - Score and Theme
+        - Score and Producers
+        - Score and Studios
+- Conclusions
+
 ## Libraries used
 --------------------------------------
 ```
