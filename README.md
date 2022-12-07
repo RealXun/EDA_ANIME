@@ -1,4 +1,4 @@
-# Exploratory Data Analysis (EDA) on Anime Data from MyAnimeList
+# Exploratory Data Analysis (EDA) on Anime Data from MyAnimeList (DRAFT)
 --------------------------------------
 
 <p align="center">
@@ -56,6 +56,7 @@ The parts in the proyect is as follows:
 - Introduction
 - Data Preparation, Cleaning and Descriptive Analysis
     - Importing libraries and checking the raw information
+    - Next esteps explanation
     - Cleaning the columns with empty lists
     - About released, Scored_by, Score and Rank
     - Dealing with Audience and Rating columns

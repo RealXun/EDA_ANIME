@@ -77,7 +77,7 @@ def pieplot(data, graph_name):
     ax.set_title(f"Pie chart for {graph_name} category.")
 
     plt.show() # Show graphic
-
+    plt.savefig(f"./images/Pichart_{graph_name.title()}.png") # Saving the image to the images folder
     plt.close()# Close the plot
 
 
@@ -100,6 +100,8 @@ def simple_barplot(data, graph_name):
     plt.xticks(rotation=90) # rotate the name of the bars
     plt.show()
 
+    plt.savefig(f"./images/Barplot_Unidimensional_{graph_name.title()}.png") # Saving the image to the images folder
+
 
 
 '''
@@ -121,6 +123,7 @@ def countplot(df,column):
 
     # Set the axes and title of the plot
     plt.xticks(rotation = 45)
+    plt.savefig(f"./images/Countplot_Unidimensional_{column.title()}.png") # Saving the image to the images folder
     plt.tight_layout()
 
 
@@ -148,6 +151,7 @@ def complex_barplot(data, graph_name):
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
 
     plt.xticks(rotation=90) # rotate the name of the bars
+    plt.savefig(f"./images/Barplot_Unidimensional_{graph_name.title()}.png") # Saving the image to the images folder
     plt.show()
 
 
@@ -164,6 +168,7 @@ def complex_barplot_top10(data):
     bar_plot = sns.barplot(y = splitted_index , x = splitted_data )
 
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
+    plt.savefig(f"./images/Barplot_top_10_Unidimensional_{data.title()}.png") # Saving the image to the images folder
 
 
 
@@ -180,6 +185,7 @@ def barplot_top10(data):
     bar_plot = sns.barplot(y = splitted_data , x = splitted_index )
 
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
+    plt.savefig(f"./images/Barplot_top_10_Unidimensional_{data.title()}.png") # Saving the image to the images folder
 
 
 
@@ -189,6 +195,7 @@ Boxplot unidimensinal
 def box(df,cat):
     plt.figure(figsize=(6,6))
     sns.boxplot(data = df , y = cat)
+    plt.savefig(f"./images/Boxplot_unidimensinal_{cat.title()}.png") # Saving the image to the images folder
 
 
 
@@ -211,6 +218,7 @@ Boxplot bidimensional
 '''
 def box_bidi(df,value1,value2):
     plt.figure(figsize=(20,8))
+    plt.savefig(f"./images/Boxplot_bidimensional_{value1}_{value2.title()}.png") # Saving the image to the images folder
     return sns.boxplot(x= value1 , y = value2, data = df , order= top_10(df,value1,value2)[value1] )
 
 
@@ -220,6 +228,7 @@ Scaterplot
 '''
 def scat(df_copy,value1,value2):
     plt.figure(figsize=(15,5))
+    plt.savefig(f"./img/Scatter_{value1}_vs{value2}")# Saving the image to the images folder
     return sns.scatterplot(data = df_copy , x = value1 , y= value2 , hue = value2 , size = value2 , sizes = (20,200))
 
 
@@ -245,16 +254,3 @@ def series_extract(df,col_index_name , col_target_name): #Col name is the column
     cont += 1   
 
   return pd.Series(datos)
-
-
-'''
-Boxplot
-'''
-def aux(df,x,y):
-    get_score = series_extract(df,'Studios_Split', 'Score')
-    df_anime_aux3 = pd.DataFrame() #New dataframe
-    #Set the producers columns with their score
-    df_anime_aux3[x] = df[x].str.split(',').explode()
-    df_anime_aux3[y] = get_score
-
-    return df_anime_aux3.head()
