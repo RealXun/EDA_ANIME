@@ -31,14 +31,6 @@ Anime may be going through one of its best periods in history. The genre has aud
 
 The [dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv) used was created using a [script](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_extraction.ipynb) to gather the data from [MyAnimeList](https://myanimelist.net/) uing [Jikan API](https://docs.api.jikan.moe/)
 
-The libraries used in this [script](https://github.com/RealXun/EDA_ANIME/blob/main/src/notebooks/Jikan_API_V4_V5.ipynb) are:
-
-```
-import requests, json, os, sys, time
-import pandas as pd
-from datetime import datetime
-```
-
 Here the [cleaned dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv)
 
 ## About the work done
