@@ -56,6 +56,7 @@ The parts in the proyect is as follows:
 - References
 
 [Click here to open the Jupyter Notebook](https://github.com/RealXun/EDA_ANIME/blob/eb2d58dcfe9fffe1b481e7d7da5557491d2300a3/src/EDA_Anime.ipynb)
+
 [Click here to open the utils file with the definitions](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/utils.py)
 
 ## Structure
