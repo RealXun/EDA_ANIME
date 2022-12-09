@@ -43,6 +43,7 @@ The purpose of this EDA is getting insights out of data while exploring it (afte
 The parts in the project are as follows:
 
 - Introduction
+- Getting the information
 - Data Preparation, Cleaning and Descriptive Analysis
 - Data and Visual Analysis
 - Conclusions
@@ -55,6 +56,7 @@ The parts in the project are as follows:
 ## Structure
 --------------------------------------
 - Introduction
+- Getting the information
 - Data Preparation, Cleaning and Descriptive Analysis
     - Importing libraries and checking the raw information
     - Next esteps explanation
