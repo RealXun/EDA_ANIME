@@ -84,7 +84,7 @@ def pieplot(data, graph_name):
     ax.set_title(f"Pie chart for {graph_name} category.")
 
     plt.show() # Show graphic
-    plt.savefig(os.path.join(img_folder, 'Pichart_unidemensioanl_' + graph_name + '.png'),dpi=600)# Saving the image to the images folder
+    plt.savefig(os.path.join(img_folder, 'Pichart_unidemensional_' + graph_name + '.png'),dpi=600)# Saving the image to the images folder
     plt.close()# Close the plot
 
 
@@ -106,8 +106,7 @@ def simple_barplot(data, graph_name):
 
     plt.xticks(rotation=90) # rotate the name of the bars
     plt.show()
-
-    plt.savefig(f"./images/Barplot_Unidimensional_{graph_name.title()}.png",dpi=600) # Saving the image to the images folder
+    plt.savefig(os.path.join(img_folder,"Barplot_Unidimensional_"+ graph_name + '.png'),dpi=600)# Saving the image to the images folder
     plt.close()# Close the plot 
 
 
