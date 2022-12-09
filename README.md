@@ -127,6 +127,7 @@ import seaborn as sns
 from collections import Counter
 from scipy.stats import chi2_contingency
 from sklearn.linear_model import LinearRegression
+import pickle
 ```
 
 ## Questions and Hypothesis
