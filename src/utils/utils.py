@@ -58,7 +58,6 @@ def to_minutes(df):
             int(positions[0]) * 60  )))))
 
 
-
 '''
 Pichart unidemensioanl
 '''
@@ -82,9 +81,11 @@ def pieplot(data, graph_name):
     ax.pie(bars, labels = height, shadow = False, explode=explode_value ,startangle = 0, autopct = "%1.2f%%") # Plot the pie chart
 
     ax.set_title(f"Pie chart for {graph_name} category.")
+    
+    plt.savefig(os.path.join(img_folder, 'Pichart_unidemensional_' + graph_name + '.png'),dpi=600)# Saving the image to the images folder
 
     plt.show() # Show graphic
-    plt.savefig(os.path.join(img_folder, 'Pichart_unidemensional_' + graph_name + '.png'),dpi=600)# Saving the image to the images folder
+
     plt.close()# Close the plot
 
 
@@ -95,18 +96,24 @@ Barplot unidemensioanl
 def simple_barplot(data, graph_name):
 
     bar_date_dict = Counter(data)
-
+    
     barplot_df=pd.DataFrame.from_dict(bar_date_dict,orient='index').reset_index() # creating a df from
 
     barplot_df=barplot_df.rename(columns={'index':graph_name, 0:'Count'}) # renaming the columns of the df
+
+    plt.figure(figsize=(20,10))
 
     bar_plot = sns.barplot(x=barplot_df["Count"],y=barplot_df[graph_name]) #assigning values to the plot
 
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
 
+    
     plt.xticks(rotation=90) # rotate the name of the bars
-    plt.show()
+
     plt.savefig(os.path.join(img_folder,"Barplot_Unidimensional_"+ graph_name + '.png'),dpi=600)# Saving the image to the images folder
+
+    plt.show() # Show graphic
+
     plt.close()# Close the plot 
 
 
@@ -126,11 +133,12 @@ def countplot(df,column):
 
     # Plot the genres and their count respectively
     fig, ax = plt.subplots(1, 1, figsize = (20, 10))
-    sns.countplot(y= column, data = df_all, palette=['#FF9999',"#99CC99"],order=df_all[column].value_counts().index)
+    ax = sns.countplot(y= column, data = df_all, palette=['#FF9999',"#99CC99"],order=df_all[column].value_counts().index)
+    ax.bar_label(ax.containers[0], label_type='edge') # add values above each bar in countplot
 
     # Set the axes and title of the plot
     plt.xticks(rotation = 45)
-    plt.savefig(f"./images/Countplot_Unidimensional_{column.title()}.png") # Saving the image to the images folder
+    plt.savefig(os.path.join(img_folder,"Countplot_Unidimensional_"+ column + '.png'),dpi=600)# Saving the image to the images folder
     plt.tight_layout()
     plt.show() # Show graphic
     plt.close()# Close the plot 
@@ -150,17 +158,20 @@ def complex_barplot(data, graph_name):
 
     # creating a dict from the data
     bar_dict = Counter(categ_list)
-
+    
     barplot_df=pd.DataFrame.from_dict(bar_dict,orient='index').reset_index() # creating a df from
+
+    plt.figure(figsize=(20,10))
 
     barplot_df=barplot_df.rename(columns={'index':graph_name, 0:'Count'}) # renaming the columns of the df
 
     bar_plot = sns.barplot(x=barplot_df[graph_name],y=barplot_df["Count"]) #assigning values to the plot
 
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
+    
 
     plt.xticks(rotation=90) # rotate the name of the bars
-    plt.savefig(f"./images/Barplot_Unidimensional_{graph_name.title()}.png") # Saving the image to the images folder
+    plt.savefig(os.path.join(img_folder, 'Barplot_Unidimensional_' + graph_name + '.png'),dpi=600)# Saving the image to the images folder
     plt.show()
     plt.close()# Close the plot 
 
@@ -178,7 +189,7 @@ def complex_barplot_top10(data,name):
     bar_plot = sns.barplot(y = splitted_index , x = splitted_data )
 
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
-    plt.savefig(f"./images/Barplot_top_10_Unidimensional_{name.title()}.png") # Saving the image to the images folder
+    plt.savefig(os.path.join(img_folder, 'Barplot_top_10_Unidimensional_' + name + '.png'),dpi=600)# Saving the image to the images folder
     plt.show() # Show graphic
     plt.close()# Close the plot 
 
@@ -197,7 +208,7 @@ def barplot_top10(data,name):
     bar_plot = sns.barplot(y = splitted_data , x = splitted_index )
 
     bar_plot.bar_label(bar_plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
-    plt.savefig(f"./images/Barplot_top_10_Unidimensional_{name.title()}.png") # Saving the image to the images folder
+    plt.savefig(os.path.join(img_folder, 'Barplot_top_10_Unidimensional_' + name + '.png'),dpi=600)# Saving the image to the images folder
     plt.show() # Show graphic
     plt.close()# Close the plot
 
