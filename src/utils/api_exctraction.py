@@ -48,8 +48,8 @@ def get_info():
     data = r.json() # creating a variable for all the info we get
 
     n_pages = data['pagination']['last_visible_page']
-    #for page in range (1,n_pages +1):
-    for page in range (1,2):
+    
+    for page in range (1,n_pages +1):
         r_page = requests.get(url + '?page=' + str(page)) # request to a web page (url)
         content = r_page.json()
         print (page)
