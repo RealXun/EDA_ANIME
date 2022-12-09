@@ -154,8 +154,9 @@ import pickle
 
 I would like to say thanks to the professors and assistant professors of The Bridge Bootcamp, as well as my classmates.
 
-Special thanks to my professor Daniel for all his time answering my questions over and over and his patience.
-Also special thanks to my classmate Roger for his support, help and all the house listening to my ideas.
+Special thanks to my professor Daniel for all his time answering my questions over and over, his patience and suggestions.
+
+Also special thanks to my classmate Roger for his support, help and all the time listening to my ideas.
 
 Thank you.
 
