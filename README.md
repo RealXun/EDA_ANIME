@@ -31,7 +31,7 @@ Anime may be going through one of its best periods in history. The genre has aud
 
 The [dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv) used was created using a [script](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_extraction.ipynb) to gather the data from [MyAnimeList](https://myanimelist.net/) uing [Jikan API](https://docs.api.jikan.moe/)
 
-Here the [cleaned dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv)
+Here is the [cleaned dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv)
 
 ## About the work done
 --------------------------------------
@@ -40,8 +40,9 @@ Usually when we think of Data Science, Machine Learning or Artificial Intelligen
 
 The purpose of this EDA is getting insights out of data while exploring it (after doing some Data cleaning/preparation/transformation) in order to answer some previos questions and prove some hypothesis.
 
-The parts in the proyect is as follows:
+The parts in the project are as follows:
 
+- Introduction
 - Data Preparation, Cleaning and Descriptive Analysis
 - Data and Visual Analysis
 - Conclusions
@@ -64,6 +65,8 @@ The parts in the proyect is as follows:
     - Change null values to Unknown
     - Standaricing duration column
     - Checking results after the cleaning process
+    - Saving cleaned df using Pickle
+    - Opening cleaned df using Pickle
 - Data and visual Analysis
     - One Dimensional-Analysis
         - Numerical Columns
@@ -71,13 +74,13 @@ The parts in the proyect is as follows:
             - Duration
             - Score
             - Rank
+            - Released
         - Categorical Columns
             - Type
             - Source
             - Rating
             - Genre
             - Theme
-            - Released
             - Producers
             - Studios
     - Bi-Dimensional-Analysis
@@ -94,7 +97,7 @@ The parts in the proyect is as follows:
 
 ## Libraries used
 --------------------------------------
-Script to gather the information
+Script used to gather the information
 ```
 import requests, json, os, sys, time
 import pandas as pd
@@ -131,9 +134,13 @@ from sklearn.linear_model import LinearRegression
 - PG-13 - Teens 13 or older has more animes int he top 10.
 - Is PG-13 - Teens 13 or older the most typical rating for animea?
 - Which genre is most release? Is this gender the more voted between the audience?
-- Find out the best anime Producer and Studio
+- Producer and Studio with more animes
 - Find out the most voted Theme and Genre for an anime. Are this the ones with more releases?
-- Is there any correlation between having more votes and getting higher score?
-- More Number of Episodes does not mean higher score. Therefore, Is there any correlation between having a higher Score and the Number of Episodes?
-- Longer duration of the episodes means higher score. Therefore, Is there any correlation between having a higher Score and the Duration of the episodes?
+- More Number of Episodes does not mean higher score. Therefore, Is there any Correlation between Score and of number of episodes?
+- Longer duration of the episodes means higher score. Therefore, Is there any Correlation between Score and Duration of the episodes?
+- Best Genres and themes to use in an anime.
+- which producers and studios would be better to hire.
+- Best source to create an anime
+- most valued Types by users
+- etc...
 
