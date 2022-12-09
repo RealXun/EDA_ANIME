@@ -149,3 +149,13 @@ import pickle
 - most valued Types by users
 - etc...
 
+## Thanks
+--------------------------------------
+
+I would like to say thanks to the professors and assistant professors of The Bridge Bootcamp, as well as my classmates.
+
+Special thanks to my professor Daniel for all his time answering my questions over and over and his pactience.
+Also special thanks to my classmate Roger for his support, help and all the house listening to my ideas.
+
+Thank you.
+
