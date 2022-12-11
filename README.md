@@ -29,9 +29,9 @@ Anime may be going through one of its best periods in history. The genre has aud
 ## Dataset Used
 --------------------------------------
 
-The [dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv) used was created using a [script](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_extraction.ipynb) to gather the data from [MyAnimeList](https://myanimelist.net/) uing [Jikan API](https://docs.api.jikan.moe/)
+The [dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv) used was created using a [script](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_exctraction.py) to gather the data from [MyAnimeList](https://myanimelist.net/) uing [Jikan API](https://docs.api.jikan.moe/)
 
-Here is the [cleaned dataset](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/cleaned.csv)
+Here is the [cleaned dataset(Pickle file)](https://github.com/RealXun/EDA_ANIME/blob/main/src/data/anime.pkl)
 
 ## About the work done
 --------------------------------------
@@ -52,6 +52,8 @@ The parts in the project are as follows:
 [Click here to open the Jupyter Notebook](https://github.com/RealXun/EDA_ANIME/blob/eb2d58dcfe9fffe1b481e7d7da5557491d2300a3/src/EDA_Anime.ipynb)
 
 [Click here to open the utils file with the definitions](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/utils.py)
+
+[Click here to open the script to extract](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_exctraction.py)
 
 ## Structure
 --------------------------------------
@@ -154,9 +156,7 @@ import pickle
 
 I would like to say thanks to the professors and assistant professors of The Bridge Bootcamp, as well as my classmates.
 
-Special thanks to my professor Daniel for all his time answering my questions over and over, his patience and suggestions.
-
-Also special thanks to my classmate Roger for his support, help and all the time listening to my ideas.
+Special thanks to my classmate Roger for his support, help and all the time listening to my ideas.
 
 Thank you.
 
