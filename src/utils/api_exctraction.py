@@ -55,8 +55,8 @@ def get_info():
         print (page)
         data = content["data"]
         time.sleep(1)
-        for char in data: #Already 1 to 13000 of 25850 #Loop to go thru a range of chosen numbers
-            #time.sleep(1)
+        for char in data: 
+            
             try: # First try yo check if the page exist or not
                 # Creation of the necessary dictionary o store the values in each loop # We specify which information to get in each Item
                 anime_dict = {"Cover" : char["images"]["jpg"]["large_image_url"] if char["images"]["jpg"]["large_image_url"]  else None,
@@ -80,7 +80,7 @@ def get_info():
                             }
                             
                 anime_list.append(anime_dict) # Append the loop info to anime_list
-                #time.sleep(1) # we use here a time sleep cuz if we are to fast asking for information, the server might block us
+                
             # Ending of the first try specifying the error
             except:
                 if r_page.status_code == 429: #If there is a 429 error we show it on screen and tell us the respuesta.reason
