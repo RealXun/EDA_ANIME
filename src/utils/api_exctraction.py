@@ -24,8 +24,6 @@ def get_info():
 
     #Creating the necessary lists
     anime_list = []
-    missing_requests_list = []
-    resource_does_not_exist = []
 
     '''
     To check if there is an empty value. If the category is empty, it returns None.
@@ -84,10 +82,9 @@ def get_info():
             # Ending of the first try specifying the error
             except:
                 if r_page.status_code == 429: #If there is a 429 error we show it on screen and tell us the respuesta.reason
-                    missing_requests_list.append(id)
                     print (f"El código de estado de la petición es: {r_page.status_code}. Estatus {r_page.reason}. No se puede recoger información de la página {id}\n")
                 else:
-                    resource_does_not_exist.append(id) #If there is a any other error we show it on screen and tell us the respuesta.reason
+                    #If there is a any other error we show it on screen and tell us the respuesta.reason
                     print (f"El código de estado de la petición es: {r_page.status_code}. Estatus {r_page.reason}. No se puede recoger información de la página {id}\n")
                 continue
 
