@@ -280,18 +280,18 @@ def scat(df_copy,value1,value2,name):
 Function to extract the data of a columns with respect to another column.
 
 '''
-def series_extract(df,col_index_name , col_target_name): #Col name is the column to which we want to extract the data.
+def series_extract(df,index_name , target_name): #Col name is the column to which we want to extract the data.
 
   datos = [] #Store the data
   cont = 0
-  index_column = df.columns.get_loc(col_target_name) #To know the index of the desired column
+  index = df.columns.get_loc(target_name) #To know the index of the desired column
 
-  for list_gen in df[col_index_name]:
+  for list_items in df[index_name]:
 
-    for gen in list_gen:
+    for gen in list_items:
         
-        val = df.iloc[cont , index_column ] #Find the value of the desired column 
-        datos.append(val) #Store values from the value to the data list
+        value = df.iloc[cont , index ] #Find the value of the desired column 
+        datos.append(value) #Store values from the value to the data list
 
     cont += 1   
 

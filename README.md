@@ -67,6 +67,7 @@ The parts in the project are as follows:
     - Dealing with Audience and Rating columns
     - Removing unncesary columns
     - Change null values to Unknown
+    - Dealing with Zero values in N_Episodes column
     - Standaricing duration column
     - Checking results after the cleaning process
     - Saving cleaned df using Pickle
