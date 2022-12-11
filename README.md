@@ -53,7 +53,7 @@ The parts in the project are as follows:
 
 [Click here to open the utils file with the definitions](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/utils.py)
 
-[Click here to open the script to extract](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_exctraction.py)
+[Click here if you only want the script to extract information](https://github.com/RealXun/EDA_ANIME/blob/main/src/utils/api_exctraction.py)
 
 ## Structure
 --------------------------------------
