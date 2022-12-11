@@ -1,4 +1,4 @@
-# Exploratory Data Analysis (EDA) on Anime Data from MyAnimeList (DRAFT)
+# Exploratory Data Analysis (EDA) on Anime Data from MyAnimeList
 --------------------------------------
 
 <p align="center">
