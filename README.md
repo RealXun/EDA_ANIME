@@ -119,6 +119,12 @@ import sys
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from scipy.stats import shapiro
+from scipy.stats import anderson
+from scipy.stats import normaltest
+from scipy.stats import spearmanr
+
+os.chdir(os.path.dirname(sys.path[0]))
 ```
 
 EDA notebook
@@ -130,9 +136,11 @@ import os
 import sys
 import seaborn as sns
 from collections import Counter
-from scipy.stats import chi2_contingency
-from sklearn.linear_model import LinearRegression
+from utils import utils
+import warnings
 import pickle
+
+warnings.simplefilter(action='ignore', category=FutureWarning)
 ```
 
 ## Questions and Hypothesis
