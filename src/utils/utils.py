@@ -329,7 +329,10 @@ Boxplot unidimensinal
 '''
 def box(df,cat,name):
     plt.figure(figsize=(10, 6))
-    sns.boxplot(data = df , x = cat)
+    sns.boxplot(data = df , x = cat,showmeans=True,meanprops={"marker":"o",
+                       "markerfacecolor":"white", 
+                       "markeredgecolor":"black",
+                      "markersize":"10"})
     plt.savefig(os.path.join(img_folder + "/" + name + '.png'),dpi=600)# Saving the image to the images folder
     plt.show() # Show graphic
     plt.close()# Close the plot
@@ -383,7 +386,10 @@ Boxplot bidimensional
 '''
 def box_bidi(df,arithmetic,value1,value2):
     plt.figure(figsize=(20,8))
-    sns.boxplot(x= value1 , y = value2, data = df , order= arithmetic[value1] )
+    sns.boxplot(x= value1 , y = value2, data = df , order= arithmetic[value1] ,showmeans=True, meanprops={"marker":"o",
+                       "markerfacecolor":"white", 
+                       "markeredgecolor":"black",
+                      "markersize":"10"})
     plt.savefig(os.path.join(img_folder, 'bidimensional_' + value1+ "_" + value2+ '.png'),dpi=600)# Saving the image to the images folder
     plt.show() # Show graphic
     plt.close()# Close the plot 
@@ -496,3 +502,22 @@ def spearman(data1, data2):
         print("'P-value equals %.3f. The two samples are independent. We fail to reject the null hypothesis" % p)
     else:
         print('P-value equals %.3f. There is a dependency between the samples. We reject the null hypothesis and We fail to reject the alternative hypothesis'% p)
+
+
+'''
+Function that devide the columna 1 (it should be a strings separated by commas) and extract the data from extra columns with respect to columna 1. *args should be numerical or string we will not separate
+
+'''
+def x_by_y(main_df,column1,*args):
+    # Create a copy of df_copy
+    def_df = main_df.copy()
+    #Since the infomation are in lists we separate the information to have a better analysis of them. 
+    def_df[f'{column1}_Split'] = def_df[column1].apply(lambda x : x.split(',')) # split the information by comma.
+
+    #create a new auxiliar dataframe
+    aux_df = pd.DataFrame() 
+    #Set the columns with their score and scored_by
+    aux_df[column1] = pd.Series([x for _list in def_df[f'{column1}_Split'] for x in _list]) # remove corchetes.
+    for i in args:
+        aux_df[i] = series_extract(def_df,f'{column1}_Split', i) #Funciton to extract the data of a column with respect to another column.
+    return aux_df
