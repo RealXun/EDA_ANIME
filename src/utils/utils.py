@@ -161,7 +161,7 @@ def simple_barplot(data,col, name):
     
     barplot_df=pd.DataFrame.from_dict(bar_date_dict,orient='index').reset_index() # creating a df from
 
-    barplot_df=barplot_df.rename(columns={'index':col, 0:'Count'}) # renaming the columns of the df
+    barplot_df=barplot_df.rename(columns={'index':col, 0:'Count'}).sort_values("Count", ascending=False) # renaming the columns of the df and sorting it
 
     plt.figure(figsize=(20,10))
 
@@ -186,7 +186,8 @@ Countplot unidmensional
 def simple_countplot(df, info,name):
     plt.figure(figsize = (9,6))
     plot = sns.countplot(x = info, 
-                data = df
+                data = df,
+                order=df[info].value_counts().index
     )
     plot.bar_label(plot.containers[0],label_type='edge', fontsize=6) # Show the values of each bar at their top
     plt.xticks(rotation = 90)
@@ -256,7 +257,7 @@ def complex_barplot(data, data1, name):
 
     plt.figure(figsize=(20,10))
 
-    barplot_df=barplot_df.rename(columns={'index':data1, 0:'Count'}) # renaming the columns of the df
+    barplot_df=barplot_df.rename(columns={'index':data1, 0:'Count'}).sort_values("Count", ascending=False) # renaming the columns of the df
 
     bar_plot = sns.barplot(x=barplot_df[data1],y=barplot_df["Count"]) #assigning values to the plot
 
